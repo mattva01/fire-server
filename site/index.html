@@ -1,0 +1,95 @@
+<html><head>
+<title>FIRE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<style type="text/css">
+  body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+</style>
+</head>
+<body>
+  <section id="application">
+    <header id="top-nav"></header>
+    <section id="main"></section>
+  </section>
+
+  <script id="navbar-layout" type="text/template">
+    <div class="navbar navbar-fixed-top" >
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="#">Fire</a>
+          <ul class="nav pull-right">
+            <li id="adminbutton">
+              <a href="#">Admin</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script id="application-layout" type="text/template">
+    <div class="container-fluid" id="main">
+      <div class="row-fluid">
+        <div class="span3" id="sidebar">
+          <div class="well sidebar-nav">
+           <ul class="nav navlist">
+             <li class="nav-header">Incidents</li>
+             <li><a href="#">Active Incidents</a></li>
+             <li><a href="#">Incident History</a></li>
+             <li><a href="#">Add Incident...</a></li>
+             <li class="nav-header">Responders</li>
+             <li><a href="#responders"> All Responders</a></li>
+           </ul>
+         </div>
+       </div>
+       <div class="span9" id="content"></div>
+     </div>
+   </div>
+ </script>
+
+
+ <script id="responder-template" type="text/template">
+    <td><%= name %></td>
+    <td><%= type %></td>
+    <td><button class="btn btn-danger delete">Delete</button></td>
+ </script>
+ <script id="responders-template" type="text/template">
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name </th>
+        <th>Type</th>
+      </tr>
+    </thead>
+
+    
+    <tbody></tbody>
+
+    
+  </table>
+  <form id="responder-form" action="#" class="form-inline">
+  <input id="name" type="text" class="input-small" placeholder="Name">
+  <input id="type" type="text" class="input-small" placeholder="Type">
+  <button type="button" class="btn add">Add</button>
+  </form>
+
+
+ </script>
+
+ <script src="js/lib/jquery-1.9.1.js"></script>
+ <script src="js/lib/underscore.js"></script>
+ <script src="js/lib/backbone.js"></script>
+ <script src="js/lib/backbone.marionette.min.js"></script>
+ <script src="js/lib/bootstrap.min.js"></script>
+ <script src="js/app.js"></script>
+
+ 
+
+ 
+
+</body></html>
+
