@@ -4,7 +4,7 @@ var application_root = __dirname,
     path = require( 'path' ), //Utilities for dealing with file paths
     mongoose = require( 'mongoose' ); //MongoDB integration
 var winston = require('winston');
-winston.add(winston.transports.File, { filename: '/var/log/FIRe.log', json: false});
+winston.add(winston.transports.File, { filename: 'FIRe.log', json: false});
 winston.remove(winston.transports.Console);
 //Create server
 var app = express();
