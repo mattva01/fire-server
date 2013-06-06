@@ -51,7 +51,6 @@ app.listen( port, function() {
 app.get( '/api', function( request, response ) {
     response.send( 'Fire API is running\r\n\r\n' );
 });
-app.get('/', routes.index);
 
 
 mongoose.connect( 'mongodb://localhost/fire_database' );
