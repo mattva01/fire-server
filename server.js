@@ -3,11 +3,18 @@ var application_root = __dirname,
   express = require( 'express' ), //Web framework
   path = require( 'path' ), //Utilities for dealing with file paths
   mongoose = require( 'mongoose' ); //MongoDB integration
+  io = require('socket.io'); // Websocket support
 var winston = require('winston');
 winston.add(winston.transports.File, { filename: 'FIRe.log', json: false});
 winston.remove(winston.transports.Console);
+
+
+
 //Create server
-var app = express();
+var app = express(),
+    http = require('http'),
+    server = http.createServer(app),
+    io = io.listen(server);
 var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -123,3 +130,5 @@ return ResponderModel.findById( request.params.id, function( err, book ) {
 });
 });
 });
+
+
